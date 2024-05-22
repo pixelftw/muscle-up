@@ -1,20 +1,6 @@
-"use client";
-// It must be not a client component we have to move client components into separate file
-import { Button } from "@/components/ui/button";
 import { Spotlight } from "@/components/ui/spotLight";
-import { useTheme } from "next-themes";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
-  const updateTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
-
   return (
     <main>
       <div className="h-screen w-full  flex items-center justify-center bg-black/[0.96]  luigantialiased bg-grid-white/[0.02] relative overflow-hidden">
