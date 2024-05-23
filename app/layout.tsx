@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ThemeProvider
           attribute="class"
-          forcedTheme="light"
+          forcedTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
