@@ -2,6 +2,7 @@ import { HeroGradient } from "./hero-gradient";
 import { HeroContent } from "./hero-content";
 import Image from "next/image";
 import Flex from "@/components/ui/flex";
+import { MoveIn } from "@/components/motion-components";
 
 export function Hero() {
   return (
@@ -10,14 +11,16 @@ export function Hero() {
       <Flex className="relative z-10 containe">
         <Flex className="container py-10 lg:py-16 flex-col lg:flex-row gap-8 lg:16 items-centers justify-center">
           <HeroContent />
-          <Image
-            width={600}
-            height={338}
-            loading="eager"
-            objectFit="cover"
-            src="/images/fitness-dashboard.png"
-            alt="fitness-darshboard"
-          />
+          <MoveIn initial="initial" animate="animate">
+            <Image
+              width={600}
+              height={338}
+              loading="eager"
+              objectFit="cover"
+              src="/images/fitness-dashboard.png"
+              alt="fitness-darshboard"
+            />
+          </MoveIn>
         </Flex>
       </Flex>
     </section>
