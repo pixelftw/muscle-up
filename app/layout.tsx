@@ -1,14 +1,18 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@/providers";
 import "./globals.css";
+import { Header } from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
 
 export const metadata: Metadata = {
-  title: "Muscle Up",
-  description: "Reach your fitness goal in faster",
+  title: "Vianlix",
+  description: "Acieve fitness goals with Vianlix",
 };
 
 export default function RootLayout({
@@ -18,13 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          forcedTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
           <SpeedInsights />
         </ThemeProvider>
